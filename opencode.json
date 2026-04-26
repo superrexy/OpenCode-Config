@@ -1,0 +1,902 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "playwright": {
+      "command": [
+        "npx",
+        "@playwright/mcp@latest"
+      ],
+      "enabled": true,
+      "type": "local"
+    }
+  },
+  "permission": {
+    "*": "allow",
+    "bash": {
+      "*": "allow",
+      "brew install *": "allow",
+      "brew upgrade *": "allow",
+      "bun add *": "allow",
+      "chmod *": "ask",
+      "chown *": "ask",
+      "cp *": "allow",
+      "curl *": "allow",
+      "dd *": "ask",
+      "docker *": "allow",
+      "fdisk *": "ask",
+      "format *": "ask",
+      "git branch -D *": "ask",
+      "git branch -d *": "allow",
+      "git clean *": "ask",
+      "git push": "allow",
+      "git rebase *": "ask",
+      "git reset --hard *": "ask",
+      "kill *": "ask",
+      "killall *": "ask",
+      "mkdir *": "allow",
+      "mkfs *": "ask",
+      "mv *": "allow",
+      "npm install *": "allow",
+      "npm run publish": "ask",
+      "parted *": "ask",
+      "pip install *": "allow",
+      "reboot": "ask",
+      "rm *": "ask",
+      "rsync *": "allow",
+      "scp *": "ask",
+      "shutdown": "ask",
+      "ssh *": "ask",
+      "sudo *": "ask",
+      "touch *": "allow",
+      "wget *": "allow"
+    },
+    "doom_loop": "ask",
+    "external_directory": {
+      "~/.config/opencode/get-shit-done/*": "allow"
+    },
+    "read": {
+      "~/.config/opencode/get-shit-done/*": "allow"
+    }
+  },
+  "plugin": [
+    "oh-my-openagent@latest"
+  ],
+  "provider": {
+    "cliproxyapi": {
+      "models": {
+        "zai/glm-4.5": {
+          "attachment": false,
+          "limit": {
+            "context": 128000,
+            "output": 96000
+          },
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "GLM 4.5"
+        },
+        "zai/glm-4.5-air": {
+          "attachment": false,
+          "limit": {
+            "context": 128000,
+            "output": 96000
+          },
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "GLM 4.5 Air"
+        },
+        "zai/glm-4.6": {
+          "attachment": false,
+          "limit": {
+            "context": 200000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "GLM 4.6"
+        },
+        "zai/glm-4.6v": {
+          "attachment": true,
+          "limit": {
+            "context": 128000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "GLM 4.6V"
+        },
+        "zai/glm-4.7": {
+          "attachment": false,
+          "limit": {
+            "context": 200000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "GLM 4.7"
+        },
+        "zai/glm-5": {
+          "attachment": false,
+          "limit": {
+            "context": 200000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "GLM 5"
+        },
+        "zai/glm-5-turbo": {
+          "attachment": false,
+          "limit": {
+            "context": 200000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "GLM 5 Turbo"
+        },
+        "zai/glm-5.1": {
+          "attachment": false,
+          "limit": {
+            "context": 200000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "GLM 5.1"
+        },
+        "minimax/MiniMax-M2": {
+          "attachment": false,
+          "limit": {
+            "context": 200000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "MiniMax M2"
+        },
+        "minimax/MiniMax-M2.1": {
+          "attachment": false,
+          "limit": {
+            "context": 200000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "MiniMax M2.1"
+        },
+        "minimax/MiniMax-M2.1-highspeed": {
+          "attachment": false,
+          "limit": {
+            "context": 200000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "MiniMax M2.1 Highspeed"
+        },
+        "minimax/MiniMax-M2.5": {
+          "attachment": false,
+          "limit": {
+            "context": 200000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "MiniMax M2.5"
+        },
+        "minimax/MiniMax-M2.5-highspeed": {
+          "attachment": false,
+          "limit": {
+            "context": 200000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "MiniMax M2.5 Highspeed"
+        },
+        "minimax/MiniMax-M2.7": {
+          "attachment": false,
+          "limit": {
+            "context": 200000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "MiniMax M2.7"
+        },
+        "minimax/MiniMax-M2.7-highspeed": {
+          "attachment": false,
+          "limit": {
+            "context": 200000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "MiniMax M2.7 Highspeed"
+        },
+        "kimi/kimi-for-coding": {
+          "attachment": false,
+          "limit": {
+            "context": 200000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "Kimi for Coding"
+        }
+      },
+      "name": "CLIProxyAPI",
+      "options": {
+        "apiKey": "sk-qwertyuiop1234567890",
+        "baseURL": "http://localhost:8317/v1"
+      }
+    },
+    "enowxlabs": {
+      "models": {
+        "auto": {
+          "limit": {
+            "context": 1000000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "auto (enowX Labs)"
+        },
+        "auto-thinking": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "auto-thinking (enowX Labs)"
+        },
+        "claude-haiku-4.5": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "claude-haiku-4.5 (enowX Labs)"
+        },
+        "claude-haiku-4.5-thinking": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "claude-haiku-4.5-thinking (enowX Labs)"
+        },
+        "claude-opus-4.6": {
+          "limit": {
+            "context": 1000000,
+            "output": 243303
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "claude-opus-4.6 (enowX Labs)"
+        },
+        "claude-sonnet-4": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "claude-sonnet-4 (enowX Labs)"
+        },
+        "claude-sonnet-4-thinking": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "claude-sonnet-4-thinking (enowX Labs)"
+        },
+        "claude-sonnet-4.5": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "claude-sonnet-4.5 (enowX Labs)"
+        },
+        "claude-sonnet-4.5-thinking": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "claude-sonnet-4.5-thinking (enowX Labs)"
+        },
+        "deepseek-3.2": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "deepseek-3.2 (enowX Labs)"
+        },
+        "deepseek-3.2-thinking": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "deepseek-3.2-thinking (enowX Labs)"
+        },
+        "deepseek-v3-2-volc": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "deepseek-v3-2-volc (enowX Labs)"
+        },
+        "enowx-default": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "enowx-default (enowX Labs)"
+        },
+        "gemini-2.5-flash": {
+          "limit": {
+            "context": 1000000,
+            "output": 65536
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "gemini-2.5-flash (enowX Labs)"
+        },
+        "gemini-2.5-pro": {
+          "limit": {
+            "context": 1000000,
+            "output": 65536
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "gemini-2.5-pro (enowX Labs)"
+        },
+        "gemini-3.0-flash": {
+          "limit": {
+            "context": 1000000,
+            "output": 65536
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "gemini-3.0-flash (enowX Labs)"
+        },
+        "gemini-3.1-flash-lite": {
+          "limit": {
+            "context": 1000000,
+            "output": 65536
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "gemini-3.1-flash-lite (enowX Labs)"
+        },
+        "gemini-3.1-pro": {
+          "limit": {
+            "context": 1000000,
+            "output": 65536
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "gemini-3.1-pro (enowX Labs)"
+        },
+        "glm-5": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "glm-5 (enowX Labs)"
+        },
+        "glm-5-thinking": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "glm-5-thinking (enowX Labs)"
+        },
+        "gpt-5.1": {
+          "limit": {
+            "context": 400000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "gpt-5.1 (enowX Labs)"
+        },
+        "gpt-5.1-codex": {
+          "limit": {
+            "context": 400000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "gpt-5.1-codex (enowX Labs)"
+        },
+        "gpt-5.1-codex-max": {
+          "limit": {
+            "context": 400000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "gpt-5.1-codex-max (enowX Labs)"
+        },
+        "gpt-5.1-codex-mini": {
+          "limit": {
+            "context": 400000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "gpt-5.1-codex-mini (enowX Labs)"
+        },
+        "gpt-5.2": {
+          "limit": {
+            "context": 400000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "gpt-5.2 (enowX Labs)"
+        },
+        "gpt-5.2-codex": {
+          "limit": {
+            "context": 400000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "gpt-5.2-codex (enowX Labs)"
+        },
+        "gpt-5.3-codex": {
+          "limit": {
+            "context": 400000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "gpt-5.3-codex (enowX Labs)"
+        },
+        "gpt-5.4": {
+          "limit": {
+            "context": 400000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "gpt-5.4 (enowX Labs)"
+        },
+        "kimi-k2.5": {
+          "limit": {
+            "context": 250000,
+            "output": 65536
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "kimi-k2.5 (enowX Labs)"
+        },
+        "minimax-m2.1": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "minimax-m2.1 (enowX Labs)"
+        },
+        "minimax-m2.1-thinking": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "minimax-m2.1-thinking (enowX Labs)"
+        },
+        "minimax-m2.5": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "minimax-m2.5 (enowX Labs)"
+        },
+        "minimax-m2.5-thinking": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "minimax-m2.5-thinking (enowX Labs)"
+        },
+        "qwen3-coder-next": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "qwen3-coder-next (enowX Labs)"
+        },
+        "qwen3-coder-next-thinking": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "qwen3-coder-next-thinking (enowX Labs)"
+        }
+      },
+      "name": "enowX Labs",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "apiKey": "enx-de86d54e0b671ec705b029249bb6ccf67ddb2c2b0efbf128e5c1b5bdd675fb98",
+        "baseURL": "http://localhost:1430/v1"
+      }
+    }
+  }
+}

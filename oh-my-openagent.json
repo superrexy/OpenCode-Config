@@ -1,0 +1,300 @@
+{
+  "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/dev/assets/oh-my-opencode.schema.json",
+  "model_fallback": true,
+  "runtime_fallback": {
+    "enabled": true,
+    "retry_on_errors": [400, 429, 503, 529],
+    "max_fallback_attempts": 3,
+    "cooldown_seconds": 60,
+    "timeout_seconds": 30,
+    "notify_on_fallback": true
+  },
+  "model_capabilities": {
+    "enabled": true,
+    "auto_refresh_on_start": true,
+    "refresh_timeout_ms": 5000
+  },
+  "experimental": {
+    "aggressive_truncation": true,
+    "auto_resume": true,
+    "task_system": true,
+    "preemptive_compaction": true,
+    "dynamic_context_pruning": {
+      "enabled": true,
+      "notification": "detailed",
+      "turn_protection": {
+        "enabled": true,
+        "turns": 3
+      },
+      "strategies": {
+        "deduplication": { "enabled": true },
+        "supersede_writes": { "enabled": true, "aggressive": false },
+        "purge_errors": { "enabled": true, "turns": 5 }
+      }
+    }
+  },
+  "background_task": {
+    "providerConcurrency": {
+      "enowxlabs": 18,
+      "cliproxyapi": 18
+    },
+    "modelConcurrency": {
+      "enowxlabs/claude-opus-4.6": 18,
+      "enowxlabs/claude-sonnet-4.5": 18,
+      "enowxlabs/claude-sonnet-4.5-thinking": 18,
+      "enowxlabs/gpt-5.4": 18,
+      "enowxlabs/gpt-5.3-codex": 18,
+      "enowxlabs/gpt-5.2": 18,
+      "enowxlabs/gpt-5.1": 18,
+      "enowxlabs/kimi-k2.5": 18,
+      "enowxlabs/gemini-3.1-pro": 18,
+      "enowxlabs/gemini-2.5-pro": 18,
+      "enowxlabs/gemini-2.5-flash": 18,
+      "enowxlabs/gemini-3.0-flash": 18,
+      "enowxlabs/gemini-3.1-flash-lite": 18,
+      "enowxlabs/deepseek-v3-2-volc": 18,
+      "enowxlabs/qwen3-coder-next": 18,
+      "enowxlabs/qwen3-coder-next-thinking": 18,
+      "cliproxyapi/minimax/MiniMax-M2.7-highspeed": 18,
+      "cliproxyapi/minimax/MiniMax-M2.5-highspeed": 18,
+      "cliproxyapi/minimax/MiniMax-M2.1-highspeed": 18,
+      "cliproxyapi/zai/glm-5-turbo": 18,
+      "cliproxyapi/zai/glm-5": 18,
+      "cliproxyapi/zai/glm-5.1": 18,
+      "cliproxyapi/zai/glm-4.6v": 18,
+      "cliproxyapi/kimi/kimi-for-coding": 18
+    },
+    "defaultConcurrency": 18,
+    "staleTimeoutMs": 180000,
+    "taskTtlMs": 1800000,
+    "circuitBreaker": {
+      "enabled": true,
+      "maxToolCalls": 200
+    }
+  },
+  "agents": {
+    "sisyphus": {
+      "model": "enowxlabs/claude-opus-4.6",
+      "variant": "high",
+      "ultrawork": {
+        "model": "enowxlabs/claude-opus-4.6",
+        "variant": "max"
+      },
+      "compaction": {
+        "model": "enowxlabs/gemini-3.1-flash-lite",
+        "variant": "low"
+      },
+      "fallback_models": [
+        {
+          "model": "enowxlabs/claude-sonnet-4.5",
+          "variant": "high"
+        },
+        {
+          "model": "enowxlabs/gpt-5.4",
+          "reasoningEffort": "high"
+        },
+        "cliproxyapi/zai/glm-5.1"
+      ]
+    },
+    "hephaestus": {
+      "model": "enowxlabs/claude-sonnet-4.5",
+      "variant": "high",
+      "fallback_models": [
+        {
+          "model": "enowxlabs/gpt-5.4",
+          "reasoningEffort": "high"
+        },
+        "enowxlabs/kimi-k2.5",
+        "cliproxyapi/zai/glm-5.1"
+      ]
+    },
+    "oracle": {
+      "model": "enowxlabs/claude-opus-4.6",
+      "variant": "high",
+      "fallback_models": [
+        {
+          "model": "enowxlabs/claude-sonnet-4.5",
+          "variant": "high"
+        },
+        {
+          "model": "enowxlabs/gpt-5.4",
+          "reasoningEffort": "high"
+        },
+        "cliproxyapi/zai/glm-5.1"
+      ]
+    },
+    "prometheus": {
+      "model": "enowxlabs/claude-sonnet-4.5",
+      "variant": "high",
+      "fallback_models": [
+        {
+          "model": "enowxlabs/gpt-5.4",
+          "reasoningEffort": "high"
+        },
+        "enowxlabs/kimi-k2.5",
+        "cliproxyapi/zai/glm-5"
+      ]
+    },
+    "metis": {
+      "model": "enowxlabs/claude-opus-4.6",
+      "variant": "high",
+      "fallback_models": [
+        {
+          "model": "enowxlabs/claude-sonnet-4.5",
+          "variant": "high"
+        },
+        {
+          "model": "enowxlabs/gpt-5.4",
+          "reasoningEffort": "high"
+        },
+        "cliproxyapi/zai/glm-5.1"
+      ]
+    },
+    "momus": {
+      "model": "enowxlabs/claude-opus-4.6",
+      "variant": "xhigh",
+      "fallback_models": [
+        {
+          "model": "enowxlabs/claude-sonnet-4.5",
+          "variant": "high"
+        },
+        {
+          "model": "enowxlabs/gpt-5.4",
+          "reasoningEffort": "xhigh"
+        },
+        "cliproxyapi/zai/glm-5.1"
+      ]
+    },
+    "atlas": {
+      "model": "enowxlabs/claude-sonnet-4.5",
+      "variant": "high",
+      "fallback_models": [
+        {
+          "model": "enowxlabs/gpt-5.4",
+          "reasoningEffort": "high"
+        },
+        "enowxlabs/kimi-k2.5",
+        "cliproxyapi/zai/glm-5"
+      ]
+    },
+    "sisyphus-junior": {
+      "model": "cliproxyapi/minimax/MiniMax-M2.7-highspeed",
+      "fallback_models": [
+        "enowxlabs/gemini-3.1-flash-lite",
+        "cliproxyapi/zai/glm-5-turbo",
+        "cliproxyapi/minimax/MiniMax-M2.5-highspeed"
+      ]
+    },
+    "explore": {
+      "model": "cliproxyapi/minimax/MiniMax-M2.7-highspeed",
+      "textVerbosity": "low",
+      "fallback_models": [
+        "enowxlabs/gemini-3.1-flash-lite",
+        "cliproxyapi/zai/glm-5-turbo",
+        "cliproxyapi/minimax/MiniMax-M2.5-highspeed"
+      ]
+    },
+    "librarian": {
+      "model": "cliproxyapi/minimax/MiniMax-M2.7-highspeed",
+      "textVerbosity": "low",
+      "fallback_models": [
+        "enowxlabs/gemini-3.1-flash-lite",
+        "cliproxyapi/zai/glm-5-turbo",
+        "cliproxyapi/minimax/MiniMax-M2.5-highspeed"
+      ]
+    },
+    "multimodal-looker": {
+      "model": "enowxlabs/gemini-2.5-pro",
+      "variant": "high",
+      "fallback_models": [
+        "enowxlabs/gemini-3.1-pro",
+        "cliproxyapi/zai/glm-4.6v"
+      ]
+    }
+  },
+  "categories": {
+    "visual-engineering": {
+      "model": "enowxlabs/gemini-3.1-pro",
+      "variant": "high",
+      "fallback_models": [
+        "enowxlabs/gemini-2.5-pro",
+        "enowxlabs/claude-sonnet-4.5"
+      ]
+    },
+    "ultrabrain": {
+      "model": "enowxlabs/claude-opus-4.6",
+      "variant": "xhigh",
+      "fallback_models": [
+        {
+          "model": "enowxlabs/gpt-5.4",
+          "reasoningEffort": "xhigh"
+        },
+        {
+          "model": "enowxlabs/claude-sonnet-4.5",
+          "variant": "high"
+        },
+        "cliproxyapi/zai/glm-5.1"
+      ]
+    },
+    "deep": {
+      "model": "enowxlabs/claude-sonnet-4.5",
+      "variant": "high",
+      "fallback_models": [
+        {
+          "model": "enowxlabs/gpt-5.4",
+          "reasoningEffort": "high"
+        },
+        {
+          "model": "enowxlabs/claude-opus-4.6",
+          "variant": "high"
+        },
+        "cliproxyapi/zai/glm-5.1"
+      ]
+    },
+    "artistry": {
+      "model": "enowxlabs/gemini-3.1-pro",
+      "variant": "high",
+      "fallback_models": [
+        "enowxlabs/gemini-2.5-pro",
+        "enowxlabs/claude-sonnet-4.5"
+      ]
+    },
+    "quick": {
+      "model": "cliproxyapi/minimax/MiniMax-M2.7-highspeed",
+      "fallback_models": [
+        "enowxlabs/gemini-3.1-flash-lite",
+        "cliproxyapi/zai/glm-5-turbo",
+        "cliproxyapi/minimax/MiniMax-M2.5-highspeed"
+      ]
+    },
+    "unspecified-low": {
+      "model": "cliproxyapi/minimax/MiniMax-M2.7-highspeed",
+      "fallback_models": [
+        "enowxlabs/gemini-3.1-flash-lite",
+        "cliproxyapi/zai/glm-5-turbo",
+        "cliproxyapi/minimax/MiniMax-M2.5-highspeed"
+      ]
+    },
+    "unspecified-high": {
+      "model": "enowxlabs/claude-sonnet-4.5",
+      "variant": "high",
+      "fallback_models": [
+        {
+          "model": "enowxlabs/gpt-5.4",
+          "reasoningEffort": "high"
+        },
+        "enowxlabs/kimi-k2.5",
+        "cliproxyapi/zai/glm-5.1"
+      ]
+    },
+    "writing": {
+      "model": "enowxlabs/claude-sonnet-4.5",
+      "variant": "high",
+      "fallback_models": [
+        "enowxlabs/gpt-5.4",
+        "enowxlabs/kimi-k2.5",
+        "cliproxyapi/zai/glm-5"
+      ]
+    }
+  }
+}

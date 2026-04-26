@@ -1,0 +1,181 @@
+{
+  "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/dev/assets/oh-my-opencode.schema.json",
+  "background_task": {
+    "providerConcurrency": {
+      "enowxlabs": 18,
+      "quotio": 18
+    },
+    "modelConcurrency": {
+      "enowxlabs/claude-opus-4.6": 3,
+      "enowxlabs/gpt-5.4": 5,
+      "enowxlabs/claude-sonnet-4.5": 8,
+      "enowxlabs/claude-haiku-4.5": 18,
+      "enowxlabs/gemini-3.1-pro": 8,
+      "enowxlabs/gemini-2.5-flash": 18,
+      "enowxlabs/gemini-3.0-flash": 18,
+      "quotio/MiniMax-M2.7-highspeed": 18,
+      "quotio/MiniMax-M2.7": 18,
+      "cliproxyapi/zai/glm-5.1": 18,
+      "cliproxyapi/zai/glm-5-turbo": 18,
+      "cliproxyapi/zai/glm-5": 18,
+      "cliproxyapi/zai/glm-4.6v": 18
+    },
+    "defaultConcurrency": 18
+  },
+  "agents": {
+    "sisyphus": {
+      "model": "cliproxyapi/zai/glm-5-turbo",
+      "variant": "high",
+      "fallback_models": [
+        "cliproxyapi/zai/glm-5.1",
+        "cliproxyapi/zai/glm-5"
+      ]
+    },
+    "hephaestus": {
+      "model": "cliproxyapi/zai/glm-5.1",
+      "variant": "medium",
+      "fallback_models": [
+        "cliproxyapi/zai/glm-5",
+        "cliproxyapi/zai/glm-5-turbo"
+      ]
+    },
+    "oracle": {
+      "model": "cliproxyapi/zai/glm-5.1",
+      "variant": "high",
+      "fallback_models": [
+        "cliproxyapi/zai/glm-5",
+        "cliproxyapi/zai/glm-5-turbo"
+      ]
+    },
+    "prometheus": {
+      "model": "cliproxyapi/zai/glm-5.1",
+      "variant": "high",
+      "fallback_models": [
+        "cliproxyapi/zai/glm-5",
+        "cliproxyapi/zai/glm-5-turbo"
+      ]
+    },
+    "metis": {
+      "model": "cliproxyapi/zai/glm-5.1",
+      "variant": "high",
+      "fallback_models": [
+        "cliproxyapi/zai/glm-5",
+        "cliproxyapi/zai/glm-5-turbo"
+      ]
+    },
+    "momus": {
+      "model": "cliproxyapi/zai/glm-5.1",
+      "variant": "xhigh",
+      "fallback_models": [
+        "cliproxyapi/zai/glm-5",
+        "cliproxyapi/zai/glm-5-turbo"
+      ]
+    },
+    "atlas": {
+      "model": "quotio/MiniMax-M2.7-highspeed",
+      "variant": "high",
+      "fallback_models": [
+        "cliproxyapi/zai/glm-5.1",
+        "cliproxyapi/zai/glm-5-turbo"
+      ]
+    },
+    "sisyphus-junior": {
+      "model": "cliproxyapi/zai/glm-5-turbo",
+      "variant": "high",
+      "fallback_models": [
+        "quotio/MiniMax-M2.7-highspeed",
+        "cliproxyapi/zai/glm-5.1"
+      ]
+    },
+    "explore": {
+      "model": "cliproxyapi/zai/glm-5-turbo",
+      "fallback_models": [
+        "quotio/MiniMax-M2.7-highspeed",
+        "cliproxyapi/zai/glm-5.1"
+      ]
+    },
+    "librarian": {
+      "model": "quotio/MiniMax-M2.7-highspeed",
+      "fallback_models": [
+        "cliproxyapi/zai/glm-5-turbo",
+        "cliproxyapi/zai/glm-5.1"
+      ]
+    },
+    "multimodal-looker": {
+      "model": "cliproxyapi/zai/glm-4.6v",
+      "variant": "high",
+      "fallback_models": [
+        "enowxlabs/gemini-3.1-pro"
+      ]
+    }
+  },
+  "categories": {
+    "visual-engineering": {
+      "model": "enowxlabs/gemini-3.1-pro",
+      "variant": "high",
+      "fallback_models": [
+        "cliproxyapi/zai/glm-5.1",
+        "cliproxyapi/zai/glm-5-turbo"
+      ]
+    },
+    "ultrabrain": {
+      "model": "cliproxyapi/zai/glm-5.1",
+      "variant": "xhigh",
+      "fallback_models": [
+        "cliproxyapi/zai/glm-5.1",
+        "cliproxyapi/zai/glm-5",
+        "cliproxyapi/zai/glm-5-turbo"
+      ]
+    },
+    "deep": {
+      "model": "cliproxyapi/zai/glm-5.1",
+      "variant": "xhigh",
+      "fallback_models": [
+        "cliproxyapi/zai/glm-5.1",
+        "cliproxyapi/zai/glm-5",
+        "cliproxyapi/zai/glm-5-turbo"
+      ]
+    },
+    "artistry": {
+      "model": "enowxlabs/gemini-3.1-pro",
+      "variant": "high",
+      "fallback_models": [
+        "cliproxyapi/zai/glm-5.1",
+        "cliproxyapi/zai/glm-5",
+        "cliproxyapi/zai/glm-5-turbo"
+      ]
+    },
+    "quick": {
+      "model": "cliproxyapi/zai/glm-5-turbo",
+      "fallback_models": [
+        "quotio/MiniMax-M2.7-highspeed",
+        "cliproxyapi/zai/glm-5.1"
+      ]
+    },
+    "unspecified-low": {
+      "model": "cliproxyapi/zai/glm-5-turbo",
+      "variant": "medium",
+      "fallback_models": [
+        "quotio/MiniMax-M2.7-highspeed",
+        "cliproxyapi/zai/glm-5.1"
+      ]
+    },
+    "unspecified-high": {
+      "model": "cliproxyapi/zai/glm-5.1",
+      "variant": "high",
+      "fallback_models": [
+        "cliproxyapi/zai/glm-5-turbo",
+        "quotio/MiniMax-M2.7-highspeed"
+      ]
+    },
+    "writing": {
+      "model": "cliproxyapi/zai/glm-5.1",
+      "variant": "high",
+      "fallback_models": [
+        "cliproxyapi/zai/glm-5-turbo",
+        "quotio/MiniMax-M2.7-highspeed",
+        "cliproxyapi/zai/glm-5.1"
+      ]
+    }
+  }
+}
